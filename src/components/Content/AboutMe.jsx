@@ -1,11 +1,13 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 
 const AboutMe = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
-      <Container style={{ backgroundColor: "red", flex: 1 }}>
+      <Container style={{ flex: 1 }}>
         <h5>
           About Me - <span>System</span>
         </h5>

@@ -1,5 +1,8 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 import "./Actions.css";
 
 const actionsData = [
@@ -46,14 +49,13 @@ const Actions = () => {
       id="actions-container"
       style={{ display: "flex", flexDirection: "column", height: "100%" }}
     >
-      <Container fluid style={{ backgroundColor: "blue", flex: 1 }}>
+      <Container fluid style={{ flex: 1 }}>
         <h5>Actions</h5>
         <hr />
 
         <Container
           className="buttons-container"
           style={{
-            backgroundColor: "orange",
             display: "flex",
             flexWrap: "wrap",
             padding: 0,

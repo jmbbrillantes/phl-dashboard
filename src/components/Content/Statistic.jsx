@@ -1,8 +1,11 @@
 import React from "react";
-import { Container, Col, Row } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Information from "./StatisticComponents/Information";
 import TotalAccount from "./StatisticComponents/TotalAccount";
 import OnlineUser from "./StatisticComponents/OnlineUser";
+import Reminder from "./StatisticComponents/Reminder";
 
 const Statistic = () => {
   return (
@@ -24,6 +27,12 @@ const Statistic = () => {
             <OnlineUser />
           </Row>
         </Col>
+      </Row>
+
+      <Row>
+        <Container fluid>
+          <Reminder />
+        </Container>
       </Row>
     </Container>
   );

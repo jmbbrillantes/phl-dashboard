@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
 
 const Information = () => {
@@ -111,7 +111,8 @@ const Information = () => {
 
   return (
     <Container fluid>
-      Information
+      <h5>Information</h5>
+      <hr />
       <Table responsive striped bordered hover>
         <thead>
           <tr>

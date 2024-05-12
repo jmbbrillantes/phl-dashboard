@@ -10,16 +10,17 @@ import Actions from "./components/Content/Actions";
 import Statistic from "./components/Content/Statistic";
 
 //Footer
+import Footer from "./components/Footer/Footer";
+
+// React-Bootstrap
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 function App() {
   return (
-    <Container fluid>
-      <section id="header">
-        <HeaderNav />
-      </section>
+    <Container fluid style={{ margin: 0, padding: 0 }}>
+      <HeaderNav />
 
       <section id="content">
         <Container fluid>
@@ -40,6 +41,18 @@ function App() {
           <Statistic />
         </Container>
       </section>
+
+      <section id="footer">
+        <Container fluid>
+          <Row>
+            <Col>
+              <Footer />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <br />
     </Container>
   );
 }
