@@ -1,0 +1,12 @@
+#actions-container button {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 48%;
+  margin: 0.2em;
+}
+
+#actions-container .buttons-container {
+  display: flex;
+  justify-content: space-around;
+}
