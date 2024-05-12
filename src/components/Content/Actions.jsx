@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import "./Actions.css";
+import Card from "react-bootstrap/Card";
+import Modal from "react-bootstrap/Modal";
 
 const actionsData = [
   {
@@ -44,8 +46,12 @@ function camelCaseToWords(s) {
 }
 
 const Actions = () => {
+  const [show, setShow] = useState(false);
+  const toggetHideShow = () => setShow(!show);
+
   return (
-    <div
+    <Card
+      className="content-container"
       id="actions-container"
       style={{ display: "flex", flexDirection: "column", height: "100%" }}
     >
@@ -64,17 +70,39 @@ const Actions = () => {
         >
           {actionsData.map((action) =>
             action.enabled ? (
-              <Button variant="primary" size="lg">
-                <span>{action.icon}</span>
-                <p>{camelCaseToWords(action.setting)}</p>
-              </Button>
+              <>
+                <Button variant="primary" size="lg" onClick={toggetHideShow}>
+                  <span>{action.icon}</span>
+                  <p>{camelCaseToWords(action.setting).toUpperCase()}</p>
+                </Button>
+
+                <Modal show={show} onHide={toggetHideShow}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>
+                      {action.icon}{" "}
+                      {camelCaseToWords(action.setting).toUpperCase()}
+                    </Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    Hello {action.setting} + {action.icon}
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={toggetHideShow}>
+                      Close
+                    </Button>
+                    <Button variant="primary" onClick={toggetHideShow}>
+                      Save Changes
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+              </>
             ) : (
               ""
             )
           )}
         </Container>
       </Container>
-    </div>
+    </Card>
   );
 };
 

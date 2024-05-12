@@ -4,6 +4,7 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
+import Card from "react-bootstrap/Card";
 
 const TotalAccount = () => {
   const data = [
@@ -45,16 +46,16 @@ const TotalAccount = () => {
   );
 
   return (
-    <Container fluid>
-      <h5>
+    <Card style={{ marginBottom: "1em" }} className="content-cards">
+      <h6>
         Total Account
         <span title="Default title">
           {" "}
           <OverlayTrigger trigger="hover" placement="right" overlay={popover}>
-            <Button variant="success">#</Button>
+            <Button variant="warning">#</Button>
           </OverlayTrigger>
         </span>
-      </h5>
+      </h6>
       <hr />
       <Table responsive striped bordered hover>
         {/* <thead>
@@ -65,7 +66,7 @@ const TotalAccount = () => {
         </thead> */}
         <tbody>{renderRows()}</tbody>
       </Table>
-    </Container>
+    </Card>
   );
 };
 

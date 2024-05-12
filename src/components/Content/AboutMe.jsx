@@ -3,10 +3,14 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
+import Card from "react-bootstrap/Card";
 
 const AboutMe = () => {
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+    <Card
+      className="content-container"
+      style={{ display: "flex", flexDirection: "column", height: "100%" }}
+    >
       <Container style={{ flex: 1 }}>
         <h5>
           About Me - <span>System</span>
@@ -63,7 +67,7 @@ const AboutMe = () => {
           </Row>
         </Form>
       </Container>
-    </div>
+    </Card>
   );
 };
 

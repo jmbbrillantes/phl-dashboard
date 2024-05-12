@@ -25,11 +25,11 @@ function App() {
       <section id="content">
         <Container fluid>
           <Row>
-            <Col md={6}>
+            <Col md={5}>
               {/* About Me Section */}
               <AboutMe />
             </Col>
-            <Col md={6}>
+            <Col md={7}>
               {/* Actions Section */}
               <Actions />
             </Col>

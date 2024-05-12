@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
+import { Card } from "react-bootstrap";
 
 const Information = () => {
   const [data, setData] = useState([]);
@@ -80,18 +81,18 @@ const Information = () => {
     },
   ];
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("https://api.example.com/data");
-        setData(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get("https://api.example.com/data");
+  //       setData(response.data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   const renderRows = () => {
     return betData.map((item, index) => {
@@ -110,8 +111,8 @@ const Information = () => {
   };
 
   return (
-    <Container fluid>
-      <h5>Information</h5>
+    <Card>
+      <h6>Information</h6>
       <hr />
       <Table responsive striped bordered hover>
         <thead>
@@ -125,7 +126,7 @@ const Information = () => {
         </thead>
         <tbody>{renderRows()}</tbody>
       </Table>
-    </Container>
+    </Card>
   );
 };
 

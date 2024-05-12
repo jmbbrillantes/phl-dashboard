@@ -1,46 +1,46 @@
-section {
-  margin: 1em;
+.right-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.modal-open {
-  overflow: visible !important;
-  padding: 0 !important;
-}
-
-/* React-Bootstrap CSS Overrides */
-.content-container {
-  background-color: #fff !important;
-  border-color: #fff !important;
-}
-
-body {
-  background-color: #fafafa !important;
-}
-
-#content .content-cards button {
-  border-radius: 5em;
+/* #navbar {
+  background-color: #543324;
   color: #fff;
-}
-
-#content h6 {
-  margin-bottom: 0;
-  margin: 1em 1em 0 1em;
-}
-
-.offcanvas-header {
-  padding-bottom: 0px !important;
-}
+} */
 
 /* Media Query */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  .right-nav-mobile {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .right-nav-mobile button {
+    margin: 0.5em 0;
+  }
+
+  .right-nav-desktop {
+    display: none;
+  }
 }
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  .right-nav-mobile {
+    display: none;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .right-nav-mobile {
+    display: none;
+  }
+  .right-nav-desktop .right-nav-child {
+    margin: 0 1em;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

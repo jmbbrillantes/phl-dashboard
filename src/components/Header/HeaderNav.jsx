@@ -5,13 +5,15 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import RightNav from "./RightNav";
+import "./HeaderNav.css";
 
 function HeaderNav() {
   const offConvasArray = [false]; //options: false, "sm", "md", "lg", "xl", "xxl"
   return (
     <>
       {offConvasArray.map((expand) => (
-        <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
+        <Navbar id="navbar" key={expand} expand={expand} className="mb-3">
           <Container fluid>
             <div>
               <Navbar.Toggle
@@ -20,19 +22,7 @@ function HeaderNav() {
               <Navbar.Brand href="#"> PhlBet</Navbar.Brand>
             </div>
 
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <Navbar.Brand>Balance</Navbar.Brand>
-              <Navbar.Brand>Login Info</Navbar.Brand>
-              <NavDropdown
-                title="Select Language"
-                id={`offcanvasNavbarDropdown-expand-${expand}`}
-              >
-                <NavDropdown.Item href="#action1">EN</NavDropdown.Item>
-                <NavDropdown.Item href="#action1">CN</NavDropdown.Item>
-              </NavDropdown>
-              <Navbar.Toggle>Inbox</Navbar.Toggle>
-              <Navbar.Toggle>Logout</Navbar.Toggle>
-            </div>
+            <RightNav className="desktop" platform="desktop" />
           </Container>
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-${expand}`}
@@ -41,10 +31,11 @@ function HeaderNav() {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                Offcanvas
+                PhlBet
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
+              <RightNav className="mobile" platform="mobile" />
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <Nav.Link href="/home">Home</Nav.Link>
                 <NavDropdown

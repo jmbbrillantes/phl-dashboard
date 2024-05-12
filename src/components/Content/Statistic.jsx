@@ -6,10 +6,11 @@ import Information from "./StatisticComponents/Information";
 import TotalAccount from "./StatisticComponents/TotalAccount";
 import OnlineUser from "./StatisticComponents/OnlineUser";
 import Reminder from "./StatisticComponents/Reminder";
+import Card from "react-bootstrap/Card";
 
 const Statistic = () => {
   return (
-    <Container fluid>
+    <Card style={{ margin: "1em" }} className="content-container">
       <h5>Statistic</h5>
       <hr />
       <Row>
@@ -34,7 +35,7 @@ const Statistic = () => {
           <Reminder />
         </Container>
       </Row>
-    </Container>
+    </Card>
   );
 };
 
