@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import "./Actions.css";
 import Card from "react-bootstrap/Card";
@@ -46,8 +44,20 @@ function camelCaseToWords(s) {
 }
 
 const Actions = () => {
-  const [show, setShow] = useState(false);
-  const toggetHideShow = () => setShow(!show);
+  const [actionStates, setActionStates] = useState(
+    actionsData.reduce((acc, action) => {
+      acc[action.setting] = false;
+      return acc;
+    }, {})
+  );
+
+  const handleClose = (setting) => {
+    setActionStates({ ...actionStates, [setting]: false });
+  };
+
+  const handleShow = (setting) => {
+    setActionStates({ ...actionStates, [setting]: true });
+  };
 
   return (
     <Card
@@ -70,13 +80,20 @@ const Actions = () => {
         >
           {actionsData.map((action) =>
             action.enabled ? (
-              <>
-                <Button variant="primary" size="lg" onClick={toggetHideShow}>
+              <React.Fragment key={action.setting}>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  onClick={() => handleShow(action.setting)}
+                >
                   <span>{action.icon}</span>
                   <p>{camelCaseToWords(action.setting).toUpperCase()}</p>
                 </Button>
 
-                <Modal show={show} onHide={toggetHideShow}>
+                <Modal
+                  show={actionStates[action.setting]}
+                  onHide={() => handleClose(action.setting)}
+                >
                   <Modal.Header closeButton>
                     <Modal.Title>
                       {action.icon}{" "}
@@ -87,18 +104,22 @@ const Actions = () => {
                     Hello {action.setting} + {action.icon}
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button variant="secondary" onClick={toggetHideShow}>
+                    <Button
+                      variant="secondary"
+                      onClick={() => handleClose(action.setting)}
+                    >
                       Close
                     </Button>
-                    <Button variant="primary" onClick={toggetHideShow}>
+                    <Button
+                      variant="primary"
+                      onClick={() => handleClose(action.setting)}
+                    >
                       Save Changes
                     </Button>
                   </Modal.Footer>
                 </Modal>
-              </>
-            ) : (
-              ""
-            )
+              </React.Fragment>
+            ) : null
           )}
         </Container>
       </Container>
