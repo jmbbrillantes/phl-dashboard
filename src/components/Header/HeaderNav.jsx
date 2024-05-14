@@ -28,6 +28,7 @@ function HeaderNav() {
             id={`offcanvasNavbar-expand-${expand}`}
             aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
             placement="start"
+            className="navbar-offcanvas"
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
@@ -35,7 +36,6 @@ function HeaderNav() {
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <RightNav className="mobile" platform="mobile" />
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <Nav.Link href="/home">Home</Nav.Link>
                 <NavDropdown
@@ -111,6 +111,7 @@ function HeaderNav() {
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
+              <RightNav className="mobile" platform="mobile" />
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Navbar>

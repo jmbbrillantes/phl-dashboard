@@ -24,10 +24,38 @@ const RightNav = (props) => {
       }
     >
       <NavbarBalance />
-      <Navbar.Text className="right-nav-child">Login Info</Navbar.Text>
+
+      <div id="currency-and-id-container" className="right-nav-child">
+        <div className="currency">
+          <span>AG</span>
+          <span>PHP</span>
+        </div>
+        <div className="id-container">
+          <p className="id-title">ITTESTS</p>
+          <div className="id-description-container">
+            <span className="id-description">ID: ITTESTS</span>
+            <button className="id-copy-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-copy"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
       <NavDropdown
-        className="right-nav-child"
-        title="Select Language"
+        className="right-nav-child right-nav-dropdown"
+        title="EN"
         id={`offcanvasNavbarDropdown-expand`}
       >
         <NavDropdown.Item href="#action1">EN</NavDropdown.Item>
